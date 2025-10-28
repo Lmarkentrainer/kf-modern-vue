@@ -4,18 +4,18 @@ const ValueProps = () => {
   const values = [
     {
       icon: Award,
-      title: "Erfahrung",
-      description: "Jahrelange Expertise in der Versicherungsberatung für individuelle und maßgeschneiderte Lösungen.",
-    },
-    {
-      icon: Shield,
-      title: "Unabhängigkeit",
-      description: "Als unabhängiger Makler arbeiten wir ausschließlich in Ihrem Interesse, nicht für Versicherer.",
+      title: "Kompetenz seit über 30 Jahren",
+      description: "Jahrzehntelange Expertise in der Versicherungsberatung für individuelle und maßgeschneiderte Lösungen.",
     },
     {
       icon: Users,
-      title: "Persönlich",
-      description: "Individuelle Betreuung und persönlicher Ansprechpartner für alle Ihre Anliegen.",
+      title: "Individuelle Beratung & Betreuung",
+      description: "Persönliche Betreuung und individueller Ansprechpartner für alle Ihre Anliegen rund um Versicherungen.",
+    },
+    {
+      icon: Shield,
+      title: "Starke Versicherungspartner",
+      description: "Zugang zu über 150 renommierten Versicherungsgesellschaften für optimalen Schutz.",
     },
   ];
 

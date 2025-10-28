@@ -36,10 +36,10 @@ const Hero = () => {
       <div className="container relative z-10 px-6 py-20 lg:py-32">
         <div className="max-w-2xl">
           <h1 className="mb-6 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
-            Ihr unabhängiger Versicherungsmakler für Privat- und Firmenkunden
+            Ihr Versicherungsmakler für Privat- und Firmenkunden
           </h1>
           <p className="mb-8 text-lg md:text-xl text-white/95 leading-relaxed">
-            Individuelle Beratung, starke Partner, verlässlicher Schutz – alles aus einer Hand.
+            Unabhängige Beratung. Starke Partner. Persönlicher Service.
           </p>
           <Button 
             size="lg" 

@@ -12,12 +12,12 @@ const Partners = () => {
     <section className="py-16 bg-background">
       <div className="container px-6">
         <div className="text-center mb-12">
-          <p className="text-lg text-muted-foreground mb-6">
-            Vertrauen Sie auf unsere Expertise
-          </p>
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground">
-            Wir arbeiten mit über 150 Versicherern zusammen
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+            Unsere Partnergesellschaften
           </h2>
+          <p className="text-lg text-muted-foreground">
+            Wir arbeiten mit über 150 renommierten Versicherern zusammen
+          </p>
         </div>
 
         <div className="flex flex-wrap justify-center items-center gap-8 max-w-4xl mx-auto">

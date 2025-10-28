@@ -28,8 +28,8 @@ const Navigation = () => {
       <nav className="container flex h-16 items-center justify-between px-6">
         {/* Logo */}
         <div className="flex items-center">
-          <a href="/" className="text-xl font-bold text-primary">
-            Kübler & Fricker
+          <a href="/" className="flex items-center gap-3">
+            <img src="/src/assets/bkf-logo.jpg" alt="BKF Assekuranz-Versicherungen" className="h-10" />
           </a>
         </div>
 
