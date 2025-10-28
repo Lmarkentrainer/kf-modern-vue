@@ -1,36 +1,42 @@
 import { Card, CardContent } from "@/components/ui/card";
-import serviceHealth from "@/assets/service-health.jpg";
-import serviceFinance from "@/assets/service-finance.jpg";
-import serviceCar from "@/assets/service-car.jpg";
-import serviceHome from "@/assets/service-home.jpg";
-import serviceBusiness from "@/assets/service-business.jpg";
+import imgGesundheit from "@/assets/Produkte/Gesundheit und Pflege.png";
+import imgKraftfahrt from "@/assets/Produkte/Kraftfahrt.png";
+import imgVorsorge from "@/assets/Produkte/Vorsorge und Vermoegen.png";
+import imgHaus from "@/assets/Produkte/Haus und Wohnen.jpg";
+import imgHaftung from "@/assets/Produkte/Haftung und Recht.png";
+import imgFirmen from "@/assets/Produkte/Firmenkunden.png";
 
 const Services = () => {
   const services = [
     {
-      title: "Gesundheit & Pflege",
-      description: "Krankenversicherung, Pflegeversicherung und Gesundheitsvorsorge",
-      image: serviceHealth,
-    },
-    {
-      title: "Vorsorge & Vermögen",
-      description: "Altersvorsorge, Rentenversicherung und Vermögensaufbau",
-      image: serviceFinance,
+      title: "Gesundheit und Pflege",
+      description: "Krankenversicherung, Pflegeabsicherung und Gesundheitsvorsorge",
+      image: imgGesundheit,
     },
     {
       title: "Kraftfahrt",
       description: "KFZ-Versicherung für Auto, Motorrad und mehr",
-      image: serviceCar,
+      image: imgKraftfahrt,
     },
     {
-      title: "Haus & Wohnen",
-      description: "Wohngebäude-, Hausrat- und Rechtsschutzversicherung",
-      image: serviceHome,
+      title: "Vorsorge und Vermögen",
+      description: "Altersvorsorge, Rentenversicherung und Vermögensaufbau",
+      image: imgVorsorge,
+    },
+    {
+      title: "Haus und Wohnen",
+      description: "Wohngebäude- und Hausratversicherung für Ihr Zuhause",
+      image: imgHaus,
+    },
+    {
+      title: "Haftung und Recht",
+      description: "Privat- und Berufsrechtsschutz sowie Haftpflichtlösungen",
+      image: imgHaftung,
     },
     {
       title: "Firmenkunden",
       description: "Gewerbliche Versicherungen und Betriebshaftpflicht",
-      image: serviceBusiness,
+      image: imgFirmen,
     },
   ];
 
