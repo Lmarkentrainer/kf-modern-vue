@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/Logo-BKF.jpg";
 
 const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -11,7 +12,7 @@ const Navigation = () => {
         {/* Logo */}
         <div className="flex items-center">
           <a href="/" className="flex items-center gap-3">
-            <img src="/src/assets/Logo-BKF.jpg" alt="BKF Assekuranz-Versicherungen" className="h-10" />
+            <img src={logo} alt="BKF Assekuranz-Versicherungen" className="h-12" />
           </a>
         </div>
 

@@ -3,45 +3,16 @@ import heroBg from "@/assets/Hero-BKF.webp";
 
 const Hero = () => {
   return (
-    <>
-      {/* Wave Animation */}
-      <div className="relative h-24 overflow-hidden bg-background">
-        <svg
-          className="absolute bottom-0 w-full h-24"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1440 320"
-          preserveAspectRatio="none"
-        >
-          <path
-            fill="hsl(var(--primary))"
-            fillOpacity="0.1"
-            d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-          >
-            <animate
-              attributeName="d"
-              dur="10s"
-              repeatCount="indefinite"
-              values="
-                M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
-                M0,160L48,144C96,128,192,96,288,96C384,96,480,128,576,144C672,160,768,160,864,144C960,128,1056,96,1152,96C1248,96,1344,128,1392,144L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
-                M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-            />
-          </path>
-        </svg>
-      </div>
-
-      {/* Hero Section */}
-      <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden">
-        {/* Background Image */}
+    <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden">
+        {/* Background Image with Parallax Effect */}
         <div 
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center scale-105 animate-[scale-in_1.5s_ease-out]"
           style={{ backgroundImage: `url(${heroBg})` }}
         />
         
-        {/* Overlay */}
+        {/* Animated Gradient Overlay */}
         <div 
-          className="absolute inset-0" 
-          style={{ background: 'linear-gradient(135deg, rgba(0, 40, 90, 0.4), rgba(75, 120, 180, 0.3))' }}
+          className="absolute inset-0 bg-gradient-to-br from-primary/60 via-primary/40 to-transparent animate-fade-in"
         />
         
         {/* Content */}
@@ -86,7 +57,6 @@ const Hero = () => {
           </svg>
         </div>
       </section>
-    </>
   );
 };
 
