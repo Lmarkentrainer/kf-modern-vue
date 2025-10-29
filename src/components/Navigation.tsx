@@ -11,7 +11,7 @@ const Navigation = () => {
         {/* Logo */}
         <div className="flex items-center">
           <a href="/" className="flex items-center gap-3">
-            <img src="/src/assets/bkf-logo.jpg" alt="BKF Assekuranz-Versicherungen" className="h-10" />
+            <img src="/src/assets/Logo-BKF.jpg" alt="BKF Assekuranz-Versicherungen" className="h-10" />
           </a>
         </div>
 
