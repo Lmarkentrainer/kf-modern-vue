@@ -12,7 +12,7 @@ const CTA = () => {
         </p>
         <Button 
           size="lg"
-          className="bg-white hover:bg-white/90 text-primary font-semibold px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
+          className="bg-white hover:bg-white/90 text-primary font-semibold rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
         >
           Jetzt Kontakt aufnehmen
         </Button>

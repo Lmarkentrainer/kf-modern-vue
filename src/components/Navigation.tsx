@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/Logo-BKF.jpg";
@@ -36,32 +37,34 @@ const Navigation = () => {
       <nav className="container flex h-16 items-center justify-between px-6">
         {/* Logo */}
         <div className="flex items-center">
-          <a href="/" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3">
             <img src={logo} alt="BKF Assekuranz-Versicherungen" className="h-12" />
-          </a>
+          </Link>
         </div>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
-          <a href="/" className="text-sm font-medium text-primary hover:text-primary/80 transition-colors">
+          <Link to="/" className="text-sm font-medium text-primary hover:text-primary/80 transition-colors">
             Startseite
-          </a>
-          <a href="#versicherungen" className="text-sm font-medium text-primary hover:text-primary/80 transition-colors">
+          </Link>
+          <Link to="/versicherungen" className="text-sm font-medium text-primary hover:text-primary/80 transition-colors">
             Versicherungen
-          </a>
-          <a href="#ueber-uns" className="text-sm font-medium text-primary hover:text-primary/80 transition-colors">
+          </Link>
+          <Link to="/ueber-uns" className="text-sm font-medium text-primary hover:text-primary/80 transition-colors">
             Über uns
-          </a>
-          <a href="#kontakt" className="text-sm font-medium text-primary hover:text-primary/80 transition-colors">
+          </Link>
+          <Link to="/kontakt" className="text-sm font-medium text-primary hover:text-primary/80 transition-colors">
             Kontakt
-          </a>
+          </Link>
         </div>
 
         {/* Right Side Actions */}
         <div className="hidden md:flex items-center gap-4">
-          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full">
-            Angebot anfordern
-          </Button>
+          <Link to="/kontakt">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full">
+              Angebot anfordern
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -77,38 +80,44 @@ const Navigation = () => {
       {mobileMenuOpen && (
         <div className="md:hidden border-t bg-white">
           <div className="container px-6 py-4 space-y-4">
-            <a
-              href="/"
+            <Link
+              to="/"
               className="block py-2 text-sm font-medium hover:text-primary transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
             >
               Startseite
-            </a>
+            </Link>
 
-            <a
-              href="#versicherungen"
+            <Link
+              to="/versicherungen"
               className="block py-2 text-sm font-medium hover:text-primary transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
             >
               Versicherungen
-            </a>
+            </Link>
 
-            <a
-              href="#ueber-uns"
+            <Link
+              to="/ueber-uns"
               className="block py-2 text-sm font-medium hover:text-primary transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
             >
               Über uns
-            </a>
+            </Link>
 
-            <a
-              href="#kontakt"
+            <Link
+              to="/kontakt"
               className="block py-2 text-sm font-medium hover:text-primary transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
             >
               Kontakt
-            </a>
+            </Link>
 
             <div className="pt-4">
-              <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full">
-                Angebot anfordern
-              </Button>
+              <Link to="/kontakt" onClick={() => setMobileMenuOpen(false)}>
+                <Button size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full">
+                  Angebot anfordern
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

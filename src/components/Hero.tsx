@@ -34,14 +34,14 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
               <Button 
                 size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
               >
                 Jetzt Kontakt aufnehmen
               </Button>
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-2 border-white text-white bg-white/10 hover:bg-white hover:text-primary font-semibold px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 backdrop-blur-sm"
+                className="border-2 border-white text-white bg-white/10 hover:bg-white hover:text-primary font-semibold rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 backdrop-blur-sm"
               >
                 Mehr erfahren
               </Button>
