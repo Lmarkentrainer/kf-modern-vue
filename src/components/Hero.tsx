@@ -2,6 +2,13 @@ import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/Hero-BKF.webp";
 
 const Hero = () => {
+  const handleScrollToNext = () => {
+    const nextSection = document.querySelector('#value-props');
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden">
         {/* Background Image with Parallax Effect */}
@@ -43,19 +50,25 @@ const Hero = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <svg
-            className="w-6 h-6 text-white"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-          </svg>
-        </div>
+        <button
+          onClick={handleScrollToNext}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-gentle cursor-pointer group"
+          aria-label="Scroll to next section"
+        >
+          <div className="flex flex-col items-center gap-2 transition-transform duration-300 group-hover:scale-110">
+            <svg
+              className="w-6 h-6 text-white transition-colors group-hover:text-white/80"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+          </div>
+        </button>
       </section>
   );
 };

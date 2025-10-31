@@ -20,7 +20,7 @@ const ValueProps = () => {
   ];
 
   return (
-    <section className="py-16 bg-background">
+    <section id="value-props" className="py-16 bg-background">
       <div className="container px-6">
         <div className="grid md:grid-cols-3 gap-8">
           {values.map((value, index) => {
@@ -28,7 +28,8 @@ const ValueProps = () => {
             return (
               <div 
                 key={index}
-                className="text-center p-6 rounded-lg hover:bg-secondary/50 transition-all"
+                className="text-center p-6 rounded-lg hover:bg-secondary/50 transition-all animate-fade-in-up"
+                style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <div className="inline-flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-primary/10">
                   <Icon className="w-8 h-8 text-primary" />

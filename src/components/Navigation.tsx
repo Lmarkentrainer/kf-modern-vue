@@ -1,13 +1,38 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/Logo-BKF.jpg";
 
 const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY < 50) {
+        setIsVisible(true);
+      } else if (currentScrollY < lastScrollY) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background shadow-sm">
+    <header 
+      className={`fixed top-0 z-50 w-full bg-white shadow-md transition-transform duration-300 ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <nav className="container flex h-16 items-center justify-between px-6">
         {/* Logo */}
         <div className="flex items-center">
@@ -18,16 +43,16 @@ const Navigation = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
-          <a href="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+          <a href="/" className="text-sm font-medium text-primary hover:text-primary/80 transition-colors">
             Startseite
           </a>
-          <a href="#versicherungen" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+          <a href="#versicherungen" className="text-sm font-medium text-primary hover:text-primary/80 transition-colors">
             Versicherungen
           </a>
-          <a href="#ueber-uns" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+          <a href="#ueber-uns" className="text-sm font-medium text-primary hover:text-primary/80 transition-colors">
             Über uns
           </a>
-          <a href="#kontakt" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+          <a href="#kontakt" className="text-sm font-medium text-primary hover:text-primary/80 transition-colors">
             Kontakt
           </a>
         </div>
@@ -50,7 +75,7 @@ const Navigation = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t bg-background">
+        <div className="md:hidden border-t bg-white">
           <div className="container px-6 py-4 space-y-4">
             <a
               href="/"
