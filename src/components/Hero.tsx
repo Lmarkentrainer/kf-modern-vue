@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import heroBg from "@/assets/Hero-BKF.webp";
 
 const Hero = () => {
@@ -33,17 +34,19 @@ const Hero = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
               <Button 
-                size="lg" 
+                size="lg"
+                asChild
                 className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
               >
-                Jetzt Kontakt aufnehmen
+                <Link to="/kontakt">Jetzt Kontakt aufnehmen</Link>
               </Button>
               <Button 
                 size="lg" 
                 variant="outline"
+                asChild
                 className="border-2 border-white text-white bg-white/10 hover:bg-white hover:text-primary font-semibold rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 backdrop-blur-sm"
               >
-                Mehr erfahren
+                <Link to="/versicherungen">Mehr erfahren</Link>
               </Button>
             </div>
           </div>

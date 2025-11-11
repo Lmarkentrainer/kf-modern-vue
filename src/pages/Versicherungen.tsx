@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { Shield, Heart, Home, Car, Briefcase, TrendingUp } from "lucide-react";
 
 const insuranceCategories = [
@@ -90,9 +91,10 @@ const Versicherungen = () => {
           </p>
           <Button 
             size="lg"
+            asChild
             className="bg-white hover:bg-white/90 text-primary font-semibold rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
           >
-            Kostenlose Beratung anfragen
+            <Link to="/kontakt">Kostenlose Beratung anfragen</Link>
           </Button>
         </div>
       </section>

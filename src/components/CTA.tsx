@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const CTA = () => {
   return (
@@ -12,9 +13,10 @@ const CTA = () => {
         </p>
         <Button 
           size="lg"
+          asChild
           className="bg-white hover:bg-white/90 text-primary font-semibold rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
         >
-          Jetzt Kontakt aufnehmen
+          <Link to="/kontakt">Jetzt Kontakt aufnehmen</Link>
         </Button>
       </div>
     </section>
