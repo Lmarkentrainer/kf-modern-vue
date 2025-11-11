@@ -1,5 +1,5 @@
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+import Layout from "@/components/Layout";
+import PageHero from "@/components/PageHero";
 import { Button } from "@/components/ui/button";
 import { Award, Users, Target, Heart } from "lucide-react";
 
@@ -28,22 +28,11 @@ const values = [
 
 const UeberUns = () => {
   return (
-    <div className="min-h-screen">
-      <Navigation />
-      
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-primary/10 to-background">
-        <div className="container px-6">
-          <div className="max-w-3xl mx-auto text-center animate-fade-in-up">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Über BKF Assekuranz
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              Ihr vertrauensvoller Partner für individuelle Versicherungslösungen
-            </p>
-          </div>
-        </div>
-      </section>
+    <Layout>
+      <PageHero 
+        title="Über BKF Assekuranz"
+        description="Ihr vertrauensvoller Partner für individuelle Versicherungslösungen"
+      />
 
       {/* About Content */}
       <section className="py-16">
@@ -123,9 +112,7 @@ const UeberUns = () => {
           </Button>
         </div>
       </section>
-
-      <Footer />
-    </div>
+    </Layout>
   );
 };
 

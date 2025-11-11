@@ -1,5 +1,5 @@
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+import Layout from "@/components/Layout";
+import PageHero from "@/components/PageHero";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -39,22 +39,11 @@ const Kontakt = () => {
   };
 
   return (
-    <div className="min-h-screen">
-      <Navigation />
-      
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-primary/10 to-background">
-        <div className="container px-6">
-          <div className="max-w-3xl mx-auto text-center animate-fade-in-up">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Kontaktieren Sie uns
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              Wir sind für Sie da – persönlich, telefonisch oder per E-Mail
-            </p>
-          </div>
-        </div>
-      </section>
+    <Layout>
+      <PageHero 
+        title="Kontaktieren Sie uns"
+        description="Wir sind für Sie da – persönlich, telefonisch oder per E-Mail"
+      />
 
       {/* Contact Info Cards */}
       <section className="py-16">
@@ -151,9 +140,7 @@ const Kontakt = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
-    </div>
+    </Layout>
   );
 };
 

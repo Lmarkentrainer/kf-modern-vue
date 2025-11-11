@@ -1,5 +1,5 @@
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+import Layout from "@/components/Layout";
+import PageHero from "@/components/PageHero";
 import { Button } from "@/components/ui/button";
 import { Shield, Heart, Home, Car, Briefcase, TrendingUp } from "lucide-react";
 
@@ -44,22 +44,11 @@ const insuranceCategories = [
 
 const Versicherungen = () => {
   return (
-    <div className="min-h-screen">
-      <Navigation />
-      
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-primary/10 to-background">
-        <div className="container px-6">
-          <div className="max-w-3xl mx-auto text-center animate-fade-in-up">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Unsere Versicherungslösungen
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              Umfassender Schutz für alle Lebensbereiche – individuell auf Ihre Bedürfnisse zugeschnitten.
-            </p>
-          </div>
-        </div>
-      </section>
+    <Layout>
+      <PageHero 
+        title="Unsere Versicherungslösungen"
+        description="Umfassender Schutz für alle Lebensbereiche – individuell auf Ihre Bedürfnisse zugeschnitten."
+      />
 
       {/* Insurance Categories Grid */}
       <section className="py-16">
@@ -107,9 +96,7 @@ const Versicherungen = () => {
           </Button>
         </div>
       </section>
-
-      <Footer />
-    </div>
+    </Layout>
   );
 };
 
