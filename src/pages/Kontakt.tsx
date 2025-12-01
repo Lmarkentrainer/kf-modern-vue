@@ -1,9 +1,11 @@
+import { useState } from "react";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { Mail, Phone, MapPin, Clock, Loader2 } from "lucide-react";
 
 const contactInfo = [
   {
@@ -33,9 +35,43 @@ const contactInfo = [
 ];
 
 const Kontakt = () => {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Form submission logic will be added later
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      firstName: formData.get("firstName"),
+      lastName: formData.get("lastName"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      subject: formData.get("subject"),
+      message: formData.get("message"),
+    };
+
+    try {
+      // Simulate form submission
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      toast({
+        title: "Nachricht gesendet!",
+        description: "Wir werden uns so schnell wie möglich bei Ihnen melden.",
+      });
+      
+      // Reset form
+      e.currentTarget.reset();
+    } catch (error) {
+      toast({
+        title: "Fehler",
+        description: "Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -121,8 +157,15 @@ const Kontakt = () => {
                   />
                 </div>
 
-                <Button size="lg" type="submit" className="w-full rounded-full">
-                  Nachricht senden
+                <Button size="lg" type="submit" className="w-full rounded-full" disabled={isSubmitting}>
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Wird gesendet...
+                    </>
+                  ) : (
+                    "Nachricht senden"
+                  )}
                 </Button>
               </form>
             </div>
