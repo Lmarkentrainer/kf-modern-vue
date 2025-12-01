@@ -5,6 +5,12 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Versicherungen from "./pages/Versicherungen";
+import GesundheitPflege from "./pages/versicherungen/GesundheitPflege";
+import Kraftfahrt from "./pages/versicherungen/Kraftfahrt";
+import VorsorgeVermoegen from "./pages/versicherungen/VorsorgeVermoegen";
+import HausWohnen from "./pages/versicherungen/HausWohnen";
+import HaftungRecht from "./pages/versicherungen/HaftungRecht";
+import Firmenkunden from "./pages/versicherungen/Firmenkunden";
 import UeberUns from "./pages/UeberUns";
 import Kontakt from "./pages/Kontakt";
 import Impressum from "./pages/Impressum";
@@ -22,6 +28,12 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/versicherungen" element={<Versicherungen />} />
+          <Route path="/versicherungen/gesundheit-pflege" element={<GesundheitPflege />} />
+          <Route path="/versicherungen/kraftfahrt" element={<Kraftfahrt />} />
+          <Route path="/versicherungen/vorsorge-vermoegen" element={<VorsorgeVermoegen />} />
+          <Route path="/versicherungen/haus-wohnen" element={<HausWohnen />} />
+          <Route path="/versicherungen/haftung-recht" element={<HaftungRecht />} />
+          <Route path="/versicherungen/firmenkunden" element={<Firmenkunden />} />
           <Route path="/ueber-uns" element={<UeberUns />} />
           <Route path="/kontakt" element={<Kontakt />} />
           <Route path="/impressum" element={<Impressum />} />

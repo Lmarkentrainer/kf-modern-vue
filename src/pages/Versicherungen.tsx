@@ -10,36 +10,42 @@ const insuranceCategories = [
     title: "Gesundheit & Pflege",
     description: "Krankenversicherung, Pflegeversicherung und mehr",
     image: "/src/assets/Produkte/Gesundheit und Pflege.png",
+    link: "/versicherungen/gesundheit-pflege",
   },
   {
     icon: Home,
     title: "Haus & Wohnen",
     description: "Hausrat, Gebäude und Wohngebäudeversicherung",
     image: "/src/assets/Produkte/Haus und Wohnen.jpg",
+    link: "/versicherungen/haus-wohnen",
   },
   {
     icon: Car,
     title: "Kraftfahrt",
     description: "KFZ-Versicherung für Ihr Fahrzeug",
     image: "/src/assets/Produkte/Kraftfahrt.png",
+    link: "/versicherungen/kraftfahrt",
   },
   {
     icon: Shield,
     title: "Haftung & Recht",
     description: "Privathaftpflicht und Rechtsschutz",
     image: "/src/assets/Produkte/Haftung und Recht.png",
+    link: "/versicherungen/haftung-recht",
   },
   {
     icon: TrendingUp,
     title: "Vorsorge & Vermögen",
     description: "Altersvorsorge und Vermögensaufbau",
     image: "/src/assets/Produkte/Vorsorge und Vermoegen.png",
+    link: "/versicherungen/vorsorge-vermoegen",
   },
   {
     icon: Briefcase,
     title: "Firmenkunden",
     description: "Gewerbeversicherungen und Betriebshaftpflicht",
     image: "/src/assets/Produkte/Firmenkunden.png",
+    link: "/versicherungen/firmenkunden",
   },
 ];
 
@@ -58,9 +64,10 @@ const Versicherungen = () => {
             {insuranceCategories.map((category, index) => {
               const Icon = category.icon;
               return (
-                <div
+                <Link
+                  to={category.link}
                   key={category.title}
-                  className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 animate-fade-in-up"
+                  className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 animate-fade-in-up block"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="h-48 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
@@ -73,7 +80,7 @@ const Versicherungen = () => {
                       Mehr erfahren
                     </Button>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>

@@ -13,31 +13,37 @@ const Services = () => {
       title: "Gesundheit und Pflege",
       description: "Krankenversicherung, Pflegeabsicherung und Gesundheitsvorsorge",
       image: imgGesundheit,
+      link: "/versicherungen/gesundheit-pflege",
     },
     {
       title: "Kraftfahrt",
       description: "KFZ-Versicherung für Auto, Motorrad und mehr",
       image: imgKraftfahrt,
+      link: "/versicherungen/kraftfahrt",
     },
     {
       title: "Vorsorge und Vermögen",
       description: "Altersvorsorge, Rentenversicherung und Vermögensaufbau",
       image: imgVorsorge,
+      link: "/versicherungen/vorsorge-vermoegen",
     },
     {
       title: "Haus und Wohnen",
       description: "Wohngebäude- und Hausratversicherung für Ihr Zuhause",
       image: imgHaus,
+      link: "/versicherungen/haus-wohnen",
     },
     {
       title: "Haftung und Recht",
       description: "Privat- und Berufsrechtsschutz sowie Haftpflichtlösungen",
       image: imgHaftung,
+      link: "/versicherungen/haftung-recht",
     },
     {
       title: "Firmenkunden",
       description: "Gewerbliche Versicherungen und Betriebshaftpflicht",
       image: imgFirmen,
+      link: "/versicherungen/firmenkunden",
     },
   ];
 
@@ -55,7 +61,7 @@ const Services = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {services.map((service, index) => (
-            <Link to="/versicherungen" key={index}>
+            <Link to={service.link} key={index}>
               <Card 
                 className="overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer border-border h-full"
               >
