@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/Logo-BKF.jpg";
@@ -8,6 +8,7 @@ const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,16 +45,44 @@ const Navigation = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
-          <Link to="/" className="text-sm font-medium text-primary hover:text-primary/80 transition-colors">
+          <Link 
+            to="/" 
+            className={`text-sm font-medium transition-colors ${
+              location.pathname === '/' 
+                ? 'text-primary font-bold' 
+                : 'text-foreground hover:text-primary'
+            }`}
+          >
             Startseite
           </Link>
-          <Link to="/versicherungen" className="text-sm font-medium text-primary hover:text-primary/80 transition-colors">
+          <Link 
+            to="/versicherungen" 
+            className={`text-sm font-medium transition-colors ${
+              location.pathname === '/versicherungen' 
+                ? 'text-primary font-bold' 
+                : 'text-foreground hover:text-primary'
+            }`}
+          >
             Versicherungen
           </Link>
-          <Link to="/ueber-uns" className="text-sm font-medium text-primary hover:text-primary/80 transition-colors">
+          <Link 
+            to="/ueber-uns" 
+            className={`text-sm font-medium transition-colors ${
+              location.pathname === '/ueber-uns' 
+                ? 'text-primary font-bold' 
+                : 'text-foreground hover:text-primary'
+            }`}
+          >
             Über uns
           </Link>
-          <Link to="/kontakt" className="text-sm font-medium text-primary hover:text-primary/80 transition-colors">
+          <Link 
+            to="/kontakt" 
+            className={`text-sm font-medium transition-colors ${
+              location.pathname === '/kontakt' 
+                ? 'text-primary font-bold' 
+                : 'text-foreground hover:text-primary'
+            }`}
+          >
             Kontakt
           </Link>
         </div>
@@ -82,7 +111,11 @@ const Navigation = () => {
           <div className="container px-6 py-4 space-y-4">
             <Link
               to="/"
-              className="block py-2 text-sm font-medium hover:text-primary transition-colors"
+              className={`block py-2 text-sm font-medium transition-colors ${
+                location.pathname === '/' 
+                  ? 'text-primary font-bold' 
+                  : 'text-foreground hover:text-primary'
+              }`}
               onClick={() => setMobileMenuOpen(false)}
             >
               Startseite
@@ -90,7 +123,11 @@ const Navigation = () => {
 
             <Link
               to="/versicherungen"
-              className="block py-2 text-sm font-medium hover:text-primary transition-colors"
+              className={`block py-2 text-sm font-medium transition-colors ${
+                location.pathname === '/versicherungen' 
+                  ? 'text-primary font-bold' 
+                  : 'text-foreground hover:text-primary'
+              }`}
               onClick={() => setMobileMenuOpen(false)}
             >
               Versicherungen
@@ -98,7 +135,11 @@ const Navigation = () => {
 
             <Link
               to="/ueber-uns"
-              className="block py-2 text-sm font-medium hover:text-primary transition-colors"
+              className={`block py-2 text-sm font-medium transition-colors ${
+                location.pathname === '/ueber-uns' 
+                  ? 'text-primary font-bold' 
+                  : 'text-foreground hover:text-primary'
+              }`}
               onClick={() => setMobileMenuOpen(false)}
             >
               Über uns
@@ -106,7 +147,11 @@ const Navigation = () => {
 
             <Link
               to="/kontakt"
-              className="block py-2 text-sm font-medium hover:text-primary transition-colors"
+              className={`block py-2 text-sm font-medium transition-colors ${
+                location.pathname === '/kontakt' 
+                  ? 'text-primary font-bold' 
+                  : 'text-foreground hover:text-primary'
+              }`}
               onClick={() => setMobileMenuOpen(false)}
             >
               Kontakt
