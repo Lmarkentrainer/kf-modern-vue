@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
+import InsuranceBreadcrumb from "@/components/InsuranceBreadcrumb";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Check } from "lucide-react";
@@ -33,6 +34,7 @@ const HausWohnen = () => {
         title="Haus und Wohnen"
         description="Schützen Sie Ihr Zuhause und Ihr Hab und Gut mit umfassenden Versicherungslösungen"
       />
+      <InsuranceBreadcrumb currentPage="Haus und Wohnen" />
 
       <section className="py-16">
         <div className="container px-6">

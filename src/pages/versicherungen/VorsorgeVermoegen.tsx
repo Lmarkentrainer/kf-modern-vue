@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
+import InsuranceBreadcrumb from "@/components/InsuranceBreadcrumb";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Check } from "lucide-react";
@@ -32,6 +33,7 @@ const VorsorgeVermoegen = () => {
         title="Vorsorge und Vermögen"
         description="Bauen Sie sich eine sichere finanzielle Zukunft auf – mit intelligenten Vorsorgelösungen"
       />
+      <InsuranceBreadcrumb currentPage="Vorsorge und Vermögen" />
 
       <section className="py-16">
         <div className="container px-6">
