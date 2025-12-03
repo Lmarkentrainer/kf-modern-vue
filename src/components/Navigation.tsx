@@ -58,7 +58,7 @@ const Navigation = () => {
           <Link 
             to="/versicherungen" 
             className={`text-sm font-medium transition-colors ${
-              location.pathname === '/versicherungen' 
+              location.pathname === '/versicherungen' || location.pathname.startsWith('/versicherungen/')
                 ? 'text-primary font-bold' 
                 : 'text-foreground hover:text-primary'
             }`}
@@ -124,7 +124,7 @@ const Navigation = () => {
             <Link
               to="/versicherungen"
               className={`block py-2 text-sm font-medium transition-colors ${
-                location.pathname === '/versicherungen' 
+                location.pathname === '/versicherungen' || location.pathname.startsWith('/versicherungen/')
                   ? 'text-primary font-bold' 
                   : 'text-foreground hover:text-primary'
               }`}

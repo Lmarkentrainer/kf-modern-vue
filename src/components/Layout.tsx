@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import CookieConsent from "@/components/CookieConsent";
 
 interface LayoutProps {
   children: ReactNode;
@@ -12,6 +13,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Navigation />
       {children}
       <Footer />
+      <CookieConsent />
     </div>
   );
 };
