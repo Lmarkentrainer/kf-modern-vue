@@ -1,7 +1,20 @@
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
+import { Button } from "@/components/ui/button";
+import { useCookieConsent } from "@/contexts/CookieConsentContext";
+import { cookieCategories } from "@/lib/cookieTypes";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow
+} from "@/components/ui/table";
 
 const Datenschutz = () => {
+  const { openSettings } = useCookieConsent();
+
   return (
     <Layout>
       <PageHero 
@@ -101,6 +114,63 @@ const Datenschutz = () => {
               TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile 
               des Browsers von „http://" auf „https://" wechselt.
             </p>
+
+            <h2 className="text-2xl font-bold mb-6 mt-12">7. Cookies</h2>
+            <p className="mb-4">
+              Unsere Website verwendet Cookies. Cookies sind kleine Textdateien, die auf Ihrem Endgerät 
+              gespeichert werden und die Ihr Browser speichert. Sie dienen dazu, unsere Website 
+              nutzerfreundlicher und effektiver zu machen.
+            </p>
+            
+            <p className="mb-4">
+              Einige Cookies sind für den Betrieb der Website unbedingt erforderlich (essenzielle Cookies), 
+              während andere uns helfen, die Website und Ihre Erfahrung zu verbessern (Statistik, Marketing, 
+              Externe Medien).
+            </p>
+
+            <div className="my-6">
+              <Button onClick={openSettings}>
+                Cookie-Einstellungen öffnen
+              </Button>
+            </div>
+
+            <h3 className="text-xl font-semibold mb-4 mt-8">Übersicht der verwendeten Cookies</h3>
+            
+            {cookieCategories.map((category) => (
+              <div key={category.id} className="mb-8">
+                <h4 className="text-lg font-semibold mb-2">
+                  {category.name}
+                  {category.required && (
+                    <span className="ml-2 text-xs bg-primary/10 text-primary px-2 py-0.5 rounded">
+                      Erforderlich
+                    </span>
+                  )}
+                </h4>
+                <p className="text-sm text-muted-foreground mb-3">{category.description}</p>
+                <div className="overflow-x-auto">
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>Cookie</TableHead>
+                        <TableHead>Anbieter</TableHead>
+                        <TableHead>Zweck</TableHead>
+                        <TableHead>Dauer</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {category.cookies.map((cookie, index) => (
+                        <TableRow key={index}>
+                          <TableCell className="font-medium">{cookie.name}</TableCell>
+                          <TableCell>{cookie.provider}</TableCell>
+                          <TableCell>{cookie.purpose}</TableCell>
+                          <TableCell>{cookie.duration}</TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
