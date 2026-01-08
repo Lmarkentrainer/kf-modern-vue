@@ -2,49 +2,56 @@ import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Shield, Heart, Home, Car, Briefcase, TrendingUp } from "lucide-react";
+import { Shield, Heart, Home, Car, Briefcase, TrendingUp, ArrowRight } from "lucide-react";
+
+import gesundheitImg from "@/assets/Produkte/Gesundheit und Pflege.png";
+import hausImg from "@/assets/Produkte/Haus und Wohnen.jpg";
+import kraftfahrtImg from "@/assets/Produkte/Kraftfahrt.png";
+import haftungImg from "@/assets/Produkte/Haftung und Recht.png";
+import vorsorgeImg from "@/assets/Produkte/Vorsorge und Vermoegen.png";
+import firmenkundenImg from "@/assets/Produkte/Firmenkunden.png";
 
 const insuranceCategories = [
   {
     icon: Heart,
     title: "Gesundheit & Pflege",
     description: "Krankenversicherung, Pflegeversicherung und mehr",
-    image: "/src/assets/Produkte/Gesundheit und Pflege.png",
+    image: gesundheitImg,
     link: "/versicherungen/gesundheit-pflege",
   },
   {
     icon: Home,
     title: "Haus & Wohnen",
     description: "Hausrat, Gebäude und Wohngebäudeversicherung",
-    image: "/src/assets/Produkte/Haus und Wohnen.jpg",
+    image: hausImg,
     link: "/versicherungen/haus-wohnen",
   },
   {
     icon: Car,
     title: "Kraftfahrt",
     description: "KFZ-Versicherung für Ihr Fahrzeug",
-    image: "/src/assets/Produkte/Kraftfahrt.png",
+    image: kraftfahrtImg,
     link: "/versicherungen/kraftfahrt",
   },
   {
     icon: Shield,
     title: "Haftung & Recht",
     description: "Privathaftpflicht und Rechtsschutz",
-    image: "/src/assets/Produkte/Haftung und Recht.png",
+    image: haftungImg,
     link: "/versicherungen/haftung-recht",
   },
   {
     icon: TrendingUp,
     title: "Vorsorge & Vermögen",
     description: "Altersvorsorge und Vermögensaufbau",
-    image: "/src/assets/Produkte/Vorsorge und Vermoegen.png",
+    image: vorsorgeImg,
     link: "/versicherungen/vorsorge-vermoegen",
   },
   {
     icon: Briefcase,
     title: "Firmenkunden",
     description: "Gewerbeversicherungen und Betriebshaftpflicht",
-    image: "/src/assets/Produkte/Firmenkunden.png",
+    image: firmenkundenImg,
     link: "/versicherungen/firmenkunden",
   },
 ];
@@ -58,7 +65,7 @@ const Versicherungen = () => {
       />
 
       {/* Insurance Categories Grid */}
-      <section className="py-16">
+      <section className="py-16 bg-muted/30">
         <div className="container px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {insuranceCategories.map((category, index) => {
@@ -67,18 +74,41 @@ const Versicherungen = () => {
                 <Link
                   to={category.link}
                   key={category.title}
-                  className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 animate-fade-in-up block"
+                  className="group relative bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-fade-in block"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="h-48 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                    <Icon className="w-20 h-20 text-primary" />
+                  {/* Background Image */}
+                  <div className="relative h-56 overflow-hidden">
+                    <img 
+                      src={category.image} 
+                      alt={category.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    {/* Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                    
+                    {/* Icon Badge */}
+                    <div className="absolute top-4 right-4 bg-primary/90 backdrop-blur-sm rounded-full p-3 shadow-lg transition-transform duration-300 group-hover:scale-110">
+                      <Icon className="w-6 h-6 text-primary-foreground" />
+                    </div>
+                    
+                    {/* Title on Image */}
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <h3 className="text-2xl font-bold text-white drop-shadow-lg">
+                        {category.title}
+                      </h3>
+                    </div>
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-3">{category.title}</h3>
-                    <p className="text-muted-foreground mb-4">{category.description}</p>
-                    <Button size="lg" className="w-full rounded-full">
-                      Mehr erfahren
-                    </Button>
+                  
+                  {/* Content */}
+                  <div className="p-6 bg-gradient-to-b from-card to-card/95">
+                    <p className="text-muted-foreground mb-5 leading-relaxed">
+                      {category.description}
+                    </p>
+                    <div className="flex items-center text-primary font-semibold group-hover:gap-3 gap-2 transition-all duration-300">
+                      <span>Mehr erfahren</span>
+                      <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                    </div>
                   </div>
                 </Link>
               );
