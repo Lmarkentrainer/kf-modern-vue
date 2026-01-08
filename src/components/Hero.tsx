@@ -18,9 +18,12 @@ const Hero = () => {
           style={{ backgroundImage: `url(${heroBg})` }}
         />
         
+        {/* Dark Overlay for Better Contrast */}
+        <div className="absolute inset-0 bg-black/50" />
+        
         {/* Animated Gradient Overlay */}
         <div 
-          className="absolute inset-0 bg-gradient-to-br from-primary/60 via-primary/40 to-transparent animate-fade-in"
+          className="absolute inset-0 bg-gradient-to-br from-primary/70 via-primary/50 to-primary/30 animate-fade-in"
         />
         
         {/* Content */}
